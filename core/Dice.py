@@ -1,7 +1,6 @@
 import random
 
 
-
 # Data structure for dices
 class Database:
     
@@ -27,24 +26,17 @@ class Database:
     #roll and add the data into the database above 
     def add_roll(self, add_num, add_count ):
 
-        new_roll = self.RollData(add_num, add_count, [ random.randint(1,6) for x in range(add_count)] )     
+        new_roll = self.RollData(add_num, add_count, [ random.randint(1,6) for x in range(add_count)] )     # Adds a new dice roll
         self.data_list.append(new_roll)
 
 
     def get_data(self):
-        return [ print(x) for x in self.data_list]   # Return the data
+        for x in self.data_list:
+            print(x)
+    # Return the data
     
 
     def __init__(self, name):
         self.name = name
         self.data_list = []
-
-
-
-Main1 = Database("Main_data")
-
-Main1.add_roll(2,5)
-
-Main1.get_data()
-
 
