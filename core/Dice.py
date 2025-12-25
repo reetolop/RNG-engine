@@ -8,10 +8,10 @@ class Database:
     class RollData:
         def __init__(self, roll_num, dice_count, rolled, ):        #each roll will get its own object with its data on it
 
-            self.roll_num = roll_num
-            self.dice_count = dice_count
-            self.rolled = rolled
-            self.value = sum(rolled)
+            self.roll_num = roll_num        # the current number of rolls
+            self.dice_count = dice_count    # amount of dice that will get rolled
+            self.rolled = rolled            # the numbers that the dices rolled 
+            self.value = sum(rolled)        # the total of those rolled numbers
             
 
         def __str__(self):
@@ -31,8 +31,8 @@ class Database:
 
 
     def get_data(self):
-        for x in self.data_list:
-            print(x)
+        for data in self.data_list:
+            print(data)
     # Return the data
     
 
