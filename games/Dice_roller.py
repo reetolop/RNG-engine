@@ -1,3 +1,6 @@
+#This Dice roller is inspired by Bro Code, please check out his channel!
+
+
 from core import Dice
 
 ("\u25CF \u250C \u2500 \u2510 \u2502 \u2514 \u2518 ")  
@@ -105,16 +108,16 @@ def play(database):  #use a database the user created
 
 
     print("Lets roll some dice shall we? ")
-    round_num = -1
     while True:
         user_count = integer_input("How many dices would you like to roll?   ")
-        round_num += 1
-        database.add_roll(round_num + 1, user_count)  # add in all the values to create an object for the roll
+        database.add_roll(user_count)  # add in all the values to create an object for the roll
 
-        last_roll = database.data_list[-1].rolled    # get the last [list] of .rolled numbers from the main database
+        last_roll = database.data_list[-1].rolled    # get the latest [list] of .rolled numbers from the main database
         display_dice(last_roll)                  # put that into the display function 
 
-        print(database.data_list[-1])                # print the whole data (summary)
+        print(database.data_list[-1])               # print the whole data (summary)
+        print(Main.RollData.full_total)
+              
 
 
 
@@ -122,5 +125,4 @@ def play(database):  #use a database the user created
 if __name__ == "__main__":
 
     Main = Dice.Database("main")
-    play(Main)
-
+    play(Main)          #use the main database that was created 
