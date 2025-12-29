@@ -1,6 +1,7 @@
 # RNG Engine
 
-A modular random number program engine built in Python (other languages in the future!])
+A modular random number program engine built in Python (I plan to add C for embedded systems and low level stuff!) 
+It also tracks all kinds of data such as all results ,  statistics such as modes , median and so on
 
 ## Structure
 
