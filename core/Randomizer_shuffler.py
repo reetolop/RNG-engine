@@ -25,13 +25,6 @@ class Randomized:
 
 
 
-
-
-
-
-
-
-
 list1 = Randomized.Randomize(["apple", "banana" , "coconut"])
 print(list1)
 print(list1.result)
