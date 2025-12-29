@@ -1,0 +1,1 @@
+from .Algorithms import quick_sort      #Other sorts later 
