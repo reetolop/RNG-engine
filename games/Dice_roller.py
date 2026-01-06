@@ -1,7 +1,7 @@
 #This Dice roller is inspired by Bro Code, please check out his channel!
 
 
-from core import Dice
+from core.Dice import Dice
 
 ("\u25CF \u250C \u2500 \u2510 \u2502 \u2514 \u2518 ")  
 #  ● ┌ ─ ┐ │ └ ┘  Ascii art for the dice(s)
@@ -126,7 +126,7 @@ def play(database):  #use a database the user created
 
 
         while True:
-            Check_status = string_input("Do you want to see the statistics for this session? y/n" )         #ask to check stats
+            Check_status = string_input("Do you want to see the statistics for this session? y/n   "  )         #ask to check stats
             if Check_status in {"y", "yes"}:
                 see_statistics(database)
                 break
@@ -146,11 +146,11 @@ def see_statistics(database):       #get statistics such as session total , aver
     print()
     print("Session Statistics")
     print()
-    print(f"Dices Rolled: {database.RollData.full_dice}")
-    print(f"Full session number total: {database.RollData.full_total}")
-    print(f"average: {database.RollData.average: .3f}")
-    print(f"Median:{database.RollData.calculate_median()}")
-    print(f"Mode: {database.RollData.calculate_mode()}")
+    print(f"Dices Rolled: {database.stats.dices}")
+    print(f"Full session number total: {database.stats.total}")
+    print(f"average: {database.stats.average: .3f}")
+    print(f"Median:{database.stats.median}")
+    print(f"Mode: {database.stats.mode}")
 
 
 
