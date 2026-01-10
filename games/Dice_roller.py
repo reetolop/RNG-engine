@@ -149,7 +149,7 @@ def see_statistics(database):       #get statistics such as session total , aver
     print(f"Dices Rolled: {database.stats.dices}")
     print(f"Full session number total: {database.stats.total}")
     print(f"average: {database.stats.average: .3f}")
-    print(f"Median:{database.stats.median}")
+    print(f"Median: {database.stats.median}")
     print(f"Mode: {database.stats.mode}")
 
 
