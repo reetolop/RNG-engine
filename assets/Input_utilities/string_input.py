@@ -5,8 +5,8 @@ def string_input(string):
         if word != (""):
             return word 
         
-        elif float(word) != ValueError:
+        if any([char.isdigit for char in word]):
             print("Please do not enter numbers")
 
         else:
-            print("please enter a valid input and do not enter blanks")
+            print("please do not enter numbers or blanks")
