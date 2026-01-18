@@ -1,11 +1,9 @@
-def string_input(string):
+def string_input(string) -> str:
+    
     while True:
-        word = input(string).strip().lower()
+        word: str = input(string).strip().lower()
 
-        if word != (""):
-            return word 
-        
-        if any([char.isdigit for char in word]):
+        if any(char.isdigit() for char in word) or word != (""):
             print("Please do not enter numbers")
 
         else:
