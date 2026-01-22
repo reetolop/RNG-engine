@@ -1,0 +1,1 @@
+from Number_guessing_game import play
