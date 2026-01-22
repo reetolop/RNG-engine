@@ -1,5 +1,5 @@
 from collections import Counter
-from assets.Sorting import quick_sort
+from assets import quick_sort
 from typing import List, Union
 
 

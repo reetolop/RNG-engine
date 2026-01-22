@@ -1,7 +1,7 @@
 #This Dice roller is inspired by Bro Code, please check out his channel!
 
 
-from core.Dice import Dice
+from games.Dice_roller import Dice
 
 ("\u25CF \u250C \u2500 \u2510 \u2502 \u2514 \u2518 ")  
 #  ● ┌ ─ ┐ │ └ ┘  Ascii art for the dice(s)

@@ -1,6 +1,6 @@
 from assets.Input_utilities import string_input, integer_input , yesno_input
-from core.Number_generator import randomize_int
-from Database_stats import database
+from .Number_generator import randomize_int
+from .Database_stats import database
 
 
 
@@ -48,7 +48,6 @@ def play():
             match guess:
 
                 case guess if guess not in range(min_num,max_num + 1):
-                
                     print("You have entered a value outside of the selected range")
             
                 case guess if guess == roll.chosen:
