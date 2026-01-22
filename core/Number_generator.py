@@ -8,14 +8,3 @@ class randomize_int:
         self.max_val = max_val
         
         self.chosen = random.randint(self.min_val, self.max_val)
-    
-
-    
-    @property
-    def rolled(self):
-        answer = random.randint(self.min_val, self.max_val)
-        return answer
-
-
-
-    

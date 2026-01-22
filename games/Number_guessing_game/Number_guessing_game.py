@@ -1,34 +1,36 @@
 from assets.Input_utilities import string_input, integer_input , yesno_input
 from core.Number_generator import randomize_int
+from Database_stats import database
 
 
 
 def compare(reference, target):
     if reference > target :
-        return "Your colder"
+        return "You're colder"
     
     elif reference < target :
-        return "Your warmer"
+        return "You're warmer"
     
-
 
 def again():
     play_again = yesno_input("Would you like to try again? y/n ")
-    
-    if not play_again: 
-        return False
+    return play_again
     
 
 
 def play():
 
     start_up = True
+    data = database()
 
     while start_up:
-
+        
+        print("\n Number guessing game \n")
+        
         min_num = integer_input("Enter the minimum number:  ")
         max_num = integer_input("Enter the maximum number:  ")
         roll = randomize_int(min_num, max_num)
+        range_size = abs(max_num - min_num) + 1 
 
         gt_lt = yesno_input("would you like it to tell you wether your hotter or colder? y/n:  ")    
 
@@ -38,7 +40,10 @@ def play():
         
         while running:
 
-            guess = integer_input(f"Enter your guess! Its a one in {(max_num - min_num)} chance:   ")
+            guess = integer_input(f"Enter your guess! Its a one in {range_size} chance:   ")
+
+            data.attempts += 1
+            data.guesses.append(guess)
 
             match guess:
 
@@ -47,7 +52,8 @@ def play():
                     print("You have entered a value outside of the selected range")
             
                 case guess if guess == roll.chosen:
-                    print("you guessed it")
+                    print(f"you guessed it! The answer was {roll.chosen}")
+                    print(data)
                     break
 
 
@@ -58,7 +64,7 @@ def play():
                     print("Too bad try again ")
 
 
-        if  not again():
+        if not again():
             print("Alright, have a great day!")
             start_up = False
         
